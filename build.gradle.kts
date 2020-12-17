@@ -32,8 +32,7 @@ dependencies {
 }
 
 application {
-    // Define the main class for the application.
-    mainClassName = "unravel.java.App"
+    mainClass.set("unravel.java.App")
 }
 
 val test by tasks.getting(Test::class) {
