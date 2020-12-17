@@ -26,5 +26,7 @@ Test report: `build/reports/tests/test/index.html`
 
 ```bash
 java -jar unravel-java.jar path-to-app-to-analize > report.json
+# OR
+./gradlew run -q --args path-to-app-to-analize > report.json
 ```
 
