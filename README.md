@@ -30,3 +30,8 @@ java -jar unravel-java.jar path-to-app-to-analize > report.json
 ./gradlew run -q --args path-to-app-to-analize > report.json
 ```
 
+Example
+```bash
+./gradlew build run -q --args build/libs/unravel-java.jar > report.json
+```
+
