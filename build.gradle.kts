@@ -21,8 +21,9 @@ repositories {
 }
 
 dependencies {
-    // This dependency is used by the application.
-    implementation("com.google.guava:guava:28.2-jre")
+    implementation("org.ow2.asm:asm:9.0")
+    implementation("org.ow2.asm:asm-tree:9.0")
+    implementation("org.glassfish:javax.json:1.1.4")
 
     // Use JUnit Jupiter API for testing.
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
