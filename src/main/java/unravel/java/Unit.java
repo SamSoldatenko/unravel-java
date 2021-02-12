@@ -1,9 +1,14 @@
 package unravel.java;
 
 
+import org.objectweb.asm.tree.ClassNode;
+
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * <pre>
- * Location of class. Idea (not everything described here is implemented or designed).
+ * Part of analyzed application
  * Example:
  * 1. If jar file is analyzed
  *      - one locations for the jar itself
@@ -11,35 +16,23 @@ package unravel.java;
  * 2. If war is analyzed
  *      - one location for classes from META-INF/classes
  *      - one location per each jar from META-INF/libs
- * 3. If project is analyzed (we can know dependencies)
- *      - one location per each module in project
- *      - one location per each dependency
  * </pre>
  */
-public class Location {
-    private String id;
-    private String type;
+public class Unit {
+    private UnitType type;
     private String name;
+    private List<ClassNode> klazzes = new LinkedList<>();
 
-    public Location(String id, String type, String name) {
-        this.id = id;
+    public Unit(UnitType type, String name) {
         this.type = type;
         this.name = name;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getType() {
+    public UnitType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(UnitType type) {
         this.type = type;
     }
 
@@ -49,5 +42,13 @@ public class Location {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void addClass(ClassNode klazz) {
+        klazzes.add(klazz);
+    }
+
+    public List<ClassNode> getKlazzes() {
+        return klazzes;
     }
 }

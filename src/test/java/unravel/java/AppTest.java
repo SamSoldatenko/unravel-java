@@ -46,8 +46,6 @@ class AppTest {
 
         JsonObject json = Json.createReader(new ByteArrayInputStream(testOutput.toByteArray()))
                 .readObject();
-        assertEquals(1, json.get("locations").asJsonArray().size());
-        assertEquals(0, json.get("classes").asJsonArray().size());
-        assertEquals(0, json.get("refs").asJsonArray().size());
+        assertEquals(0, json.get("units").asJsonArray().size());
     }
 }
